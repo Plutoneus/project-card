@@ -20,7 +20,7 @@ function App() {
                 todos={todos}
                 setTodos={setTodos}
             /> {/* This creates the todo with these parameters */}
-            <TodoList />
+            <TodoList todos={todos}/>
         </div>
     );
 }
