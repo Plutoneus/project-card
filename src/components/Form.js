@@ -1,9 +1,8 @@
 import React from 'react';
 
-const Form = ({ inputText, setInputText, todos, setTodos }) => {
+const Form = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
     //Here I can write javascript code and functions
     const inputTextHandler = (e) => {
-        console.log(e.target.value);
         setInputText(e.target.value);
     };
 
@@ -13,12 +12,16 @@ const Form = ({ inputText, setInputText, todos, setTodos }) => {
             ...todos,
             {
                 text: inputText,
-                complete: false,
+                completed: false,
                 id: Math.random() * 1000 // lol
             }
         ]);
         setInputText("");
     };
+
+    const statusHandler = (e) => {
+        setStatus(e.target.value);
+    }
 
     return (
         <form>
@@ -32,7 +35,7 @@ const Form = ({ inputText, setInputText, todos, setTodos }) => {
                 <i className="fas fa-plus-square"></i>
             </button>
             <div className="select">
-                <select name="todos" className="filter-todo">
+                <select onChange={statusHandler} name="todos" className="filter-todo">
                     <option value="all">All</option>
                     <option value="complete">Complete</option>
                     <option value="incomplete">Incomplete</option>
