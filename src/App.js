@@ -4,6 +4,7 @@ import './App.css';
 //Importing Components
 import Form from './components/Form';
 import TodoList from './components/TodoList';
+import monke from './images/monke.png';
 
 function App() {
     //State stuff
@@ -57,8 +58,11 @@ function App() {
     return (
         <div className="App">
             <header>
-                <h1>Joey's Todo List</h1>
+                <h1>Todo List</h1>
             </header>
+            <div className="imgcontainer">
+                <img className="monke" src={monke} />
+            </div>
             <Form
                 setInputText={setInputText}
                 inputText={inputText}
