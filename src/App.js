@@ -71,6 +71,8 @@ function App() {
                 setTodos={setTodos}
                 todos={todos}
             />
+        <img src="./images/monke.png">
+        </img>
         </div>
     );
 }
